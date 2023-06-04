@@ -12,9 +12,6 @@
         android:theme="@style/Theme.MoblieProgram"
         tools:targetApi="31">
         <activity
-            android:name=".CalenderActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
@@ -43,6 +40,8 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
+        <activity android:name=".UploadActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
