@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadActivity">
+
+    <!-- creating text view for displaying heading-->
+    <TextView
+        android:id="@+id/idTVHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="프로필 사진 수정"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FF000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- image view for displaying image-->
+    <ImageView
+        android:id="@+id/idIVImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/idTVHeading"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="3dp" />
+
+    <!-- button to choose image-->
+    <Button
+        android:id="@+id/idBtnChooseImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idIVImage"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="4dp"
+        android:text="사진 불러오기"
+        android:textAllCaps="false" />
+
+    <!-- button to upload image-->
+    <Button
+        android:id="@+id/idBtnUploadImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnChooseImage"
+        android:layout_margin="10dp"
+        android:padding="4dp"
+        android:text="사진 적용"
+        android:textAllCaps="false" />
+
+</RelativeLayout>
