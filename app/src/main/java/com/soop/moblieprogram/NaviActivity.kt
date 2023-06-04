@@ -1,11 +1,10 @@
 package com.soop.moblieprogram
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.soop.moblieprogram.CalendarFragment
-import com.soop.moblieprogram.ChatFragment
 import com.soop.moblieprogram.databinding.ActivityNaviBinding
 
 private const val TAG_CALENDER = "calender_fragment"
@@ -25,12 +24,29 @@ class NaviActivity : AppCompatActivity() {
 
         setFragment(TAG_HOME, HomeFragment())
 
+        //아마 처음 시작하는 화면을 보여주는 코드 인듯(?)
+//        setActivity(CalenderActivity::class.java)
+
         binding.navigationView.setOnItemSelectedListener { item ->
             when(item.itemId) {
+
+//                R.id.calenderFragment -> setActivity(CalenderActivity::class.java)
+//                R.id.homeFragment -> setActivity(HomeActivity::class.java)
+//                R.id.myPageFragment-> setActivity(MypagegActivity::class.java)
+//                R.id.chatFragment-> setActivity(ChatActivity::class.java)
+
+                //여기 아래는 임시 주석 위에가 필요한거
                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
                 R.id.myPageFragment-> setFragment(TAG_MY_PAGE, MypageFragment())
                 R.id.chatFragment-> setFragment(TAG_CHAT, ChatFragment())
+                /*
+                R.id.calendarFragment -> setActivity(CalendarActivity::class.java)
+                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+                R.id.myPageFragment -> setFragment(TAG_MY_PAGE, MyPageFragment())
+                R.id.chatFragment -> setActivity(ChatActivity::class.java)
+                */
+
             }
             true
         }
@@ -86,4 +102,9 @@ class NaviActivity : AppCompatActivity() {
 
         fragTransaction.commitAllowingStateLoss()
     }
+//    private fun setActivity(activityClass: Class<*>) {
+//        val intent = Intent(this, activityClass)
+//        startActivity(intent)
+//    }
+
 }

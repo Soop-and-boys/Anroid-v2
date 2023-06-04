@@ -3,8 +3,6 @@ package com.soop.moblieprogram
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -98,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
                                     startActivity(
                                         Intent(
                                             this@LoginActivity,
-                                            ProfileActivity::class.java
+                                            NaviActivity::class.java
                                         ).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     )
                                     // Display Toast
