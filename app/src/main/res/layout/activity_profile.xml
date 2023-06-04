@@ -28,9 +28,9 @@
         android:layout_marginTop="32dp"
         android:text="Logout" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/uploadButton"
-        android:text="Upload" />
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/uploadButton"-->
+<!--        android:text="Upload" />-->
 </LinearLayout>

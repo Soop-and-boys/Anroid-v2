@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         // Initialize sign in options the client-id is copied form google-services.json file
         // NEED TO GET client-id FROM THE INTEGRATED PROJECT'S google-services.json FILE
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("433854203628-9rik5vjgqrj95cosllt2jai0a2iclrv9.apps.googleusercontent.com")     // insert client-id from google-services.json file
+            .requestIdToken("508239288253-62gjljv2liemaflt87t4ncpis9mq9rcb.apps.googleusercontent.com")     // insert client-id from google-services.json file
             .requestEmail()
             .build()
 
