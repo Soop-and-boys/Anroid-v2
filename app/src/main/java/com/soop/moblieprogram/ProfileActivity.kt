@@ -61,12 +61,12 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
 
-        // switch activity
-//        val uploadButton = findViewById<Button>(R.id.uploadButton)
-//        uploadButton.setOnClickListener {
-//            val intent = Intent(this, UploadActivity::class.java)
-//            startActivity(intent)
-//        }
+//         switch activity
+        val uploadButton = findViewById<Button>(R.id.uploadButton)
+        uploadButton.setOnClickListener {
+            val intent = Intent(this, UploadActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
