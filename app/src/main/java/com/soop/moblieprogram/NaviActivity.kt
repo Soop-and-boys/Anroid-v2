@@ -11,6 +11,7 @@ private const val TAG_CALENDER = "calender_fragment"
 private const val TAG_HOME = "home_fragment"
 private const val TAG_MY_PAGE = "my_page_fragment"
 private const val TAG_CHAT = "chat_fragment"
+private const val TAG_BOARD = "board_fragment"
 
 class NaviActivity : AppCompatActivity() {
 
@@ -40,6 +41,7 @@ class NaviActivity : AppCompatActivity() {
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
                 R.id.myPageFragment-> setFragment(TAG_MY_PAGE, MypageFragment())
                 R.id.chatFragment-> setFragment(TAG_CHAT, ChatFragment())
+                R.id.boardFragment->setFragment(TAG_BOARD, BoardFragment())
                 /*
                 R.id.calendarFragment -> setActivity(CalendarActivity::class.java)
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
@@ -64,6 +66,7 @@ class NaviActivity : AppCompatActivity() {
         val home = manager.findFragmentByTag(TAG_HOME)
         val myPage = manager.findFragmentByTag(TAG_MY_PAGE)
         val chat = manager.findFragmentByTag(TAG_CHAT)
+        val board = manager.findFragmentByTag(TAG_BOARD)
 
 
         if (calender != null){
@@ -77,6 +80,9 @@ class NaviActivity : AppCompatActivity() {
         }
         if (chat != null) {
             fragTransaction.hide(chat)
+        }
+        if (board != null) {
+            fragTransaction.hide(board)
         }
 
         if (tag == TAG_CALENDER) {
@@ -97,6 +103,11 @@ class NaviActivity : AppCompatActivity() {
         else if (tag == TAG_CHAT){
             if (chat != null){
                 fragTransaction.show(chat)
+            }
+        }
+        else if (tag == TAG_BOARD){
+            if (board != null){
+                fragTransaction.show(board)
             }
         }
 
