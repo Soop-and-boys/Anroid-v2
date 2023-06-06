@@ -1,4 +1,4 @@
-package kr.ac.tukorea.firebaseboardex
+package com.soop.moblieprogram
 
 import android.os.Bundle
 import android.view.View
@@ -11,7 +11,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kr.ac.tukorea.firebaseboardex.databinding.ActivityContentWriteBinding
+import com.soop.moblieprogram.databinding.ActivityContentWriteBinding
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -2,7 +2,6 @@ package com.soop.moblieprogram
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +32,7 @@ class MypageFragment : Fragment() {
         ivImage = view.findViewById(R.id.iv_image)
         tvName = view.findViewById(R.id.tv_name)
         btLogout = view.findViewById(R.id.bt_logout)
+        
 
         // Initialize firebase auth
         firebaseAuth = FirebaseAuth.getInstance()

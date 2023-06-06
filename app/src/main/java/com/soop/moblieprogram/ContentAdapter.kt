@@ -1,4 +1,4 @@
-package kr.ac.tukorea.firebaseboardex
+package com.soop.moblieprogram
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -38,8 +38,8 @@ class ContentAdapter(val items: MutableList<ContentModel>) :
                     // 클릭된 아이템에 대한 처리를 수행합니다.
                     val message = "Clicked: ${clickedItem.title}"
                     Toast.makeText(itemView.context, message, Toast.LENGTH_SHORT).show()
-                    val intent: Intent = Intent(itemView.context, ContentScreenActivity::class.java)
-                    itemView.context.startActivity(intent)
+//                    val intent: Intent = Intent(itemView.context, ContentScreenActivity::class.java)
+//                    itemView.context.startActivity(intent)
                 }
             }
         }

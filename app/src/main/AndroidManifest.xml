@@ -11,14 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoblieProgram"
         tools:targetApi="31">
-        <activity
-            android:name=".ChatRoomListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChatActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ChatRoomListActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".ChatActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ContentWriteActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ContentListActivity"
             android:exported="true" />
         <activity
             android:name=".NaviActivity"

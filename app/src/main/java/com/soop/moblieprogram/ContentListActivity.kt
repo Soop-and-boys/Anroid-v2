@@ -1,11 +1,12 @@
+package com.soop.moblieprogram
 
-package kr.ac.tukorea.firebaseboardex
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -15,11 +16,10 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-//import kr.ac.tukorea.firebaseboardex.databinding.ActivityContentListBinding
-import kr.ac.tukorea.firebaseboardex.databinding.ActivityMainBinding
+import com.soop.moblieprogram.databinding.ActivityContentListBinding
 
 class ContentListActivity: AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityContentListBinding
     lateinit var contentAdapter: ContentAdapter
     private val contentList = mutableListOf<ContentModel>()
     lateinit var mAuth: FirebaseAuth
@@ -29,6 +29,8 @@ class ContentListActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        binding = DataBindingUtil.setContentView(this, R.layout.activity_content_list)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_content_list)
+//        binding = DataBindingUtil.setContentView<>(this, R.layout)
+        setContentView(R.layout.activity_content_list)
 
         contentAdapter = ContentAdapter(contentList)
         // RecyclerView의 adapter에 ContentAdapter를 설정한다.

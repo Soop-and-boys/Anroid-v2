@@ -1,4 +1,4 @@
-package kr.ac.tukorea.firebaseboardex
+package com.soop.moblieprogram
 
 data class ContentModel(
     val title: String = "",
