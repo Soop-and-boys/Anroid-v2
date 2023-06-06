@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this@LoginActivity,
-                    ProfileActivity::class.java
+                    NaviActivity::class.java
                 ).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             )
         }

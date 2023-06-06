@@ -43,10 +43,16 @@ class MypageFragment : Fragment() {
 
         // Check condition
         if (firebaseUser != null) {
-            // When firebase user is not equal to null, set image on image view
-            Glide.with(requireContext()).load(firebaseUser.photoUrl).into(ivImage)
-            // Set name on text view
+
+            // if image on storage doesn't exist, will load google profile image instead
+            Glide.with(this@MypageFragment)
+                .load("https://firebasestorage.googleapis.com/v0/b/mobliesoop.appspot.com/o/${firebaseUser.uid}?alt=media")
+                .error(Glide.with(this@MypageFragment).load(firebaseUser.photoUrl))
+                .into(ivImage)
+
+            // set name on text view
             tvName.text = firebaseUser.displayName
+
         }
 
         // Initialize sign-in client
