@@ -21,6 +21,7 @@ class MypageFragment : Fragment() {
     private lateinit var ivImage: ImageView
     private lateinit var tvName: TextView
     private lateinit var btLogout: Button
+    private lateinit var btnMyBoard: Button
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
@@ -32,7 +33,7 @@ class MypageFragment : Fragment() {
         ivImage = view.findViewById(R.id.iv_image)
         tvName = view.findViewById(R.id.tv_name)
         btLogout = view.findViewById(R.id.bt_logout)
-        
+        btnMyBoard = view.findViewById(R.id.myBoradButton)
 
         // Initialize firebase auth
         firebaseAuth = FirebaseAuth.getInstance()
@@ -69,6 +70,12 @@ class MypageFragment : Fragment() {
         val uploadButton = view.findViewById<Button>(R.id.uploadButton)
         uploadButton.setOnClickListener {
             val intent = Intent(requireContext(), UploadActivity::class.java)
+            startActivity(intent)
+        }
+
+        val myboardButton = view.findViewById<Button>(R.id.myBoradButton)
+        myboardButton.setOnClickListener {
+            val intent = Intent(requireContext(), MypageWriteListActivity::class.java)
             startActivity(intent)
         }
 
