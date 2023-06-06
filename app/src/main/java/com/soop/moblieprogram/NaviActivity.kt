@@ -10,7 +10,9 @@ import com.soop.moblieprogram.databinding.ActivityNaviBinding
 private const val TAG_CALENDER = "calender_fragment"
 private const val TAG_HOME = "home_fragment"
 private const val TAG_MY_PAGE = "my_page_fragment"
-private const val TAG_CHAT = "chat_fragment"
+//private const val TAG_CHAT = "chat_fragment"
+private const val TAG_CHAT = "chatlist_fragment"
+
 private const val TAG_BOARD = "board_fragment"
 
 class NaviActivity : AppCompatActivity() {
@@ -40,7 +42,7 @@ class NaviActivity : AppCompatActivity() {
                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
                 R.id.myPageFragment-> setFragment(TAG_MY_PAGE, MypageFragment())
-                R.id.chatFragment-> setFragment(TAG_CHAT, ChatFragment())
+                R.id.chatFragment-> setFragment(TAG_CHAT, ChatlistFragment())
                 R.id.boardFragment->setFragment(TAG_BOARD, BoardFragment())
                 /*
                 R.id.calendarFragment -> setActivity(CalendarActivity::class.java)
