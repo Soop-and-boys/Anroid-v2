@@ -40,7 +40,7 @@ class UploadActivity : AppCompatActivity() {
             // When firebase user is not equal to null set image on image view
             // if image on storage doesn't exist, will load google profile image instead
             Glide.with(this@UploadActivity)
-                .load("https://firebasestorage.googleapis.com/v0/b/login-gfg-3a06c.appspot.com/o/${firebaseUser.uid}?alt=media")
+                .load("https://firebasestorage.googleapis.com/v0/b/mobliesoop.appspot.com/o/${firebaseUser.uid}?alt=media")
                 .error(Glide.with(this@UploadActivity).load(firebaseUser.photoUrl))
                 .into(imageView)
         }

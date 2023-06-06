@@ -50,7 +50,7 @@ class ProfileActivity : AppCompatActivity() {
 
             // if image on storage doesn't exist, will load google profile image instead
             Glide.with(this@ProfileActivity)
-                .load("https://firebasestorage.googleapis.com/v0/b/login-gfg-3a06c.appspot.com/o/${firebaseUser.uid}?alt=media")
+                .load("https://firebasestorage.googleapis.com/v0/b/mobliesoop.appspot.com/o/${firebaseUser.uid}?alt=media")
                 .error(Glide.with(this@ProfileActivity).load(firebaseUser.photoUrl))
                 .into(ivImage)
 
