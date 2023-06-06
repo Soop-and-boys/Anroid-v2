@@ -1,7 +1,9 @@
 package com.soop.moblieprogram
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,6 +14,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
+//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
+import java.io.File
 
 class ProfileActivity : AppCompatActivity() {
     // Initialize variable
@@ -24,6 +32,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
 
         // Assign variable
         ivImage = findViewById(R.id.iv_image)
@@ -38,10 +47,16 @@ class ProfileActivity : AppCompatActivity() {
 
         // Check condition
         if (firebaseUser != null) {
-            // When firebase user is not equal to null set image on image view
-            Glide.with(this@ProfileActivity).load(firebaseUser.photoUrl).into(ivImage)
+
+            // if image on storage doesn't exist, will load google profile image instead
+            Glide.with(this@ProfileActivity)
+                .load("https://firebasestorage.googleapis.com/v0/b/login-gfg-3a06c.appspot.com/o/${firebaseUser.uid}?alt=media")
+                .error(Glide.with(this@ProfileActivity).load(firebaseUser.photoUrl))
+                .into(ivImage)
+
             // set name on text view
             tvName.text = firebaseUser.displayName
+
         }
 
         // Initialize sign in client
@@ -56,7 +71,11 @@ class ProfileActivity : AppCompatActivity() {
                     // Display Toast
                     Toast.makeText(applicationContext, "Logout successful", Toast.LENGTH_SHORT).show()
                     // Finish activity
+
+                    // bugfix: logout will call LoginActivity instead of previous activity
+                    val intent = Intent(this, LoginActivity::class.java)
                     finish()
+                    startActivity(intent)
                 }
             }
         }
@@ -67,7 +86,6 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(this, UploadActivity::class.java)
             startActivity(intent)
         }
-
 
     }
 }

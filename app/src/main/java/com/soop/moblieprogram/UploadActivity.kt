@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -25,7 +26,6 @@ class UploadActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
     var fileUri: Uri? = null;
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)
@@ -34,16 +34,15 @@ class UploadActivity : AppCompatActivity() {
         uploadImageBtn = findViewById(R.id.idBtnUploadImage)
         imageView = findViewById(R.id.idIVImage)
 
-        // test: set placeholder image
-
         var firebaseAuth = FirebaseAuth.getInstance()
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null) {
             // When firebase user is not equal to null set image on image view
-
-            Glide.with(this@UploadActivity).load(firebaseUser.photoUrl).into(imageView)
-//            // set name on text view
-//            tvName.text = firebaseUser.displayName
+            // if image on storage doesn't exist, will load google profile image instead
+            Glide.with(this@UploadActivity)
+                .load("https://firebasestorage.googleapis.com/v0/b/login-gfg-3a06c.appspot.com/o/${firebaseUser.uid}?alt=media")
+                .error(Glide.with(this@UploadActivity).load(firebaseUser.photoUrl))
+                .into(imageView)
         }
 
         // on below line adding click listener for our choose image button.
@@ -103,15 +102,24 @@ class UploadActivity : AppCompatActivity() {
             progressDialog.show()
 
             // on below line creating a storage reference for firebase storage and creating a child in it with
-            // random uuid
+            // fix: changed random uuid to current user's uid.png
+
+            var firebaseAuth = FirebaseAuth.getInstance()
+            val firebaseUser = firebaseAuth.currentUser
+
             val ref: StorageReference = FirebaseStorage.getInstance().getReference()
-                .child(UUID.randomUUID().toString())
+                .child(firebaseUser!!.uid.toString())
             // on below line adding a file to our storage.
             ref.putFile(fileUri!!).addOnSuccessListener {
                 // this method is called when file is uploaded.
                 // in this case we are dismissing our progress dialog and displaying a toast message
                 progressDialog.dismiss()
                 Toast.makeText(applicationContext, "사진 변경 완료", Toast.LENGTH_SHORT).show()
+
+                // feat: switch to ProfileActivity
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+
             }.addOnFailureListener {
                 // this method is called when there is failure in file upload.
                 // in this case we are dismissing the dialog and displaying toast message
