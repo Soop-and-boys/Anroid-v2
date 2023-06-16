@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.soop.moblieprogram.CalendarFragment
-import com.soop.moblieprogram.ChatFragment
+import com.soop.moblieprogram.board.BoardFragment
+//import com.example.ahndwon.fragmentrecyclerviewexample.HomeFragment
 import com.soop.moblieprogram.databinding.ActivityNaviBinding
+import com.soop.moblieprogram.home.HomeFragment
+import com.soop.moblieprogram.mypage.MypageFragment
 
 private const val TAG_CALENDER = "calender_fragment"
 private const val TAG_HOME = "home_fragment"
 private const val TAG_MY_PAGE = "my_page_fragment"
-private const val TAG_CHAT = "chat_fragment"
+private const val TAG_CHAT = "chat_list_fragment"
+private const val TAG_BOARD = "board_fragment"
 
 class NaviActivity : AppCompatActivity() {
 
@@ -25,12 +28,31 @@ class NaviActivity : AppCompatActivity() {
 
         setFragment(TAG_HOME, HomeFragment())
 
+        //아마 처음 시작하는 화면을 보여주는 코드 인듯(?)
+//        setActivity(CalenderActivity::class.java)
+
         binding.navigationView.setOnItemSelectedListener { item ->
             when(item.itemId) {
+
+//                R.id.calenderFragment -> setActivity(CalenderActivity::class.java)
+//                R.id.homeFragment -> setActivity(HomeActivity::class.java)
+//                R.id.myPageFragment-> setActivity(MypagegActivity::class.java)
+//                R.id.chatFragment-> setActivity(ChatActivity::class.java)
+
+                //여기 아래는 임시 주석 위에가 필요한거
                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
                 R.id.myPageFragment-> setFragment(TAG_MY_PAGE, MypageFragment())
-                R.id.chatFragment-> setFragment(TAG_CHAT, ChatFragment())
+//                R.id.chatFragment-> setFragment(TAG_CHAT, ChatFragment())
+                R.id.chatFragment-> setFragment(TAG_CHAT, ChatListFragment())
+                R.id.boardFragment->setFragment(TAG_BOARD, BoardFragment())
+                /*
+                R.id.calendarFragment -> setActivity(CalendarActivity::class.java)
+                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+                R.id.myPageFragment -> setFragment(TAG_MY_PAGE, MyPageFragment())
+                R.id.chatFragment -> setActivity(ChatActivity::class.java)
+                */
+
             }
             true
         }
@@ -48,6 +70,7 @@ class NaviActivity : AppCompatActivity() {
         val home = manager.findFragmentByTag(TAG_HOME)
         val myPage = manager.findFragmentByTag(TAG_MY_PAGE)
         val chat = manager.findFragmentByTag(TAG_CHAT)
+        val board = manager.findFragmentByTag(TAG_BOARD)
 
 
         if (calender != null){
@@ -61,6 +84,9 @@ class NaviActivity : AppCompatActivity() {
         }
         if (chat != null) {
             fragTransaction.hide(chat)
+        }
+        if (board != null) {
+            fragTransaction.hide(board)
         }
 
         if (tag == TAG_CALENDER) {
@@ -83,7 +109,17 @@ class NaviActivity : AppCompatActivity() {
                 fragTransaction.show(chat)
             }
         }
+        else if (tag == TAG_BOARD){
+            if (board != null){
+                fragTransaction.show(board)
+            }
+        }
 
         fragTransaction.commitAllowingStateLoss()
     }
+//    private fun setActivity(activityClass: Class<*>) {
+//        val intent = Intent(this, activityClass)
+//        startActivity(intent)
+//    }
+
 }

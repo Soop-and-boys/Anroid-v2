@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".board.ContentWriteActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="자유 게시판 글쓰기"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <EditText
+                android:id="@+id/titleArea"
+                style="@style/ContentEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="제목"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="소개"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <EditText
+                android:id="@+id/contentArea"
+                style="@style/ContentEditText"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="top"
+                android:hint="내용을 자유롭게 입력해 보세요."
+                android:textSize="14sp"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카테고리 설정"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp">
+                <CheckBox
+                    android:id="@+id/checkbox_pj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="프로젝트"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox
+                    android:id="@+id/checkbox_study"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="스터디"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox
+                    android:id="@+id/checkbox_mentoring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="멘토링"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox
+                    android:id="@+id/checkbox_etc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타"
+                    android:onClick="onCheckboxClicked"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp">
+                <CheckBox
+                    android:id="@+id/checkbox_volunteer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="봉사활동"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox
+                    android:id="@+id/checkbox_competition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="공모전"
+                    android:onClick="onCheckboxClicked"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="오픈채팅 주소"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"/>
+                <EditText
+                    android:id="@+id/chatUrlArea"
+                    style="@style/ContentEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="오픈채팅방 주소를 입력해주세요."
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="장소"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"/>
+                <EditText
+                    android:id="@+id/locationArea"
+                    style="@style/ContentEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="장소를 입력해주세요."
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/writeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="작성하기"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</layout>
