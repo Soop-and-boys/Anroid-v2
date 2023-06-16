@@ -36,8 +36,8 @@ class ContentAdapter(val items: MutableList<ContentModel>) :
                 if (position != RecyclerView.NO_POSITION) {
                     val clickedItem = items[position]
                     // 클릭된 아이템에 대한 처리를 수행합니다.
-                    val message = "Clicked: ${clickedItem.title}"
-                    Toast.makeText(itemView.context, message, Toast.LENGTH_SHORT).show()
+//                    val message = "Clicked: ${clickedItem.title}"
+//                    Toast.makeText(itemView.context, message, Toast.LENGTH_SHORT).show()
                     val intent: Intent = Intent(itemView.context, UserBoardActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     itemView.context.startActivity(intent)

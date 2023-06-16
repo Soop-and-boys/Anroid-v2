@@ -8,18 +8,6 @@
 
 
     <TextView
-        android:id="@+id/textEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="0sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +17,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEvent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view"
@@ -60,7 +48,9 @@
             android:background="@drawable/tag_shape"
             android:text="#대외활동"
             android:textColor="#FFFFFF"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:minHeight="0dp"
+            android:minWidth="0dp" />
 
         <Button
             android:id="@+id/button3"
@@ -71,7 +61,9 @@
             android:background="@drawable/tag_shape"
             android:text="#대외활동"
             android:textColor="#FFFFFF"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"/>
     </LinearLayout>
 
     <ScrollView
@@ -97,15 +89,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="제목제목제목"
+                android:text="실리콘밸리 부트캠프 팀원 구해요."
                 android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="장소 : 장소장소장소"
+                android:text="장소 : 한국공학대학교"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -119,15 +111,25 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="코너가 둥근 Layoutrkskekekka가나닥라마바사아차자창ㄹ망ㄹㅁㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁ넝ㄹ;ㅣㅏㅓㅁ닝러라만"
+                    android:text="저는 백엔드 하구요. 디자인2명, 백엔드 1명 더 구합니다. ㅜㅜ 관심 있으신분들 카카오톡 오픈채팅 톡방 들어와서 문의해주세요. 열정 있으신 분들 오시면 좋을 것 같아요.
+"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/createChatBtn"
                 android:background="@drawable/tag_shape"
-                android:text="문의하기" />
+                android:text="채팅방 개설하기" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contactBtn"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/tag_shape"
+                android:text="오픈채팅방 입장하기" />
         </LinearLayout>
 
     </ScrollView>
