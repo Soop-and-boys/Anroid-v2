@@ -1,12 +1,14 @@
 package com.soop.moblieprogram
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.soop.moblieprogram.board.BoardFragment
 //import com.example.ahndwon.fragmentrecyclerviewexample.HomeFragment
 import com.soop.moblieprogram.databinding.ActivityNaviBinding
+import com.soop.moblieprogram.home.HomeFragment
+import com.soop.moblieprogram.mypage.MypageFragment
 
 private const val TAG_CALENDER = "calender_fragment"
 private const val TAG_HOME = "home_fragment"

@@ -7,19 +7,29 @@
     tools:context=".BoardActivity">
 
 
-
+    <TextView
+        android:id="@+id/textEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="0sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="이벤트"
+        android:text="모집게시판"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/textEvent" />
 
     <View
         android:id="@+id/view"
@@ -67,9 +77,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tagsLinearLayout">
 
 
@@ -78,29 +91,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/test" />
 
+            <TextView
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="6dp"
-                android:background="@drawable/text_view_shape"
-                android:orientation="vertical"
-                android:padding="6dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="제목제목제목"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="코너가 둥근 Layoutrkskekekka가나닥라\n마바사아차자창ㄹ망ㄹㅁㄹㅁㄴㅇㄹdfadfasdfa\nsdfasdfasdfasdfasdfasd\nfasdfasdfasdfasdfadsfadsfasdfasdfㅁㄴㅇㄹㅁㄴㅇㄹㅁ넝ㄹ;\nㅣㅏㅓㅁ닝러라만"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="장소 : 장소장소장소"
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -113,11 +119,17 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="코너가 둥근 Layout dfkadfl;asdfjlasdjflasd;fja;dsjf;ljas;dljflkajdddddddddddddddkkkkkkkk"
+                    android:text="코너가 둥근 Layoutrkskekekka가나닥라마바사아차자창ㄹ망ㄹㅁㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁ넝ㄹ;ㅣㅏㅓㅁ닝러라만"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </LinearLayout>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tag_shape"
+                android:text="문의하기" />
         </LinearLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
