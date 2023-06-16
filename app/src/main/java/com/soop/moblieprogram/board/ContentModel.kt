@@ -1,4 +1,4 @@
-package com.soop.moblieprogram
+package com.soop.moblieprogram.board
 
 data class ContentModel(
     val title: String = "",

@@ -1,9 +1,7 @@
-package com.soop.moblieprogram
+package com.soop.moblieprogram.mypage
 
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -14,12 +12,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.ktx.storage
+import com.soop.moblieprogram.LoginActivity
+import com.soop.moblieprogram.R
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
-import java.io.File
 
 class ProfileActivity : AppCompatActivity() {
     // Initialize variable

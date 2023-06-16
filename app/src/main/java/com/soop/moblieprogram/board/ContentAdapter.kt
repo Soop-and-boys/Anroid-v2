@@ -1,4 +1,4 @@
-package com.soop.moblieprogram
+package com.soop.moblieprogram.board
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,19 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.soop.moblieprogram.R
 
 class ContentAdapter(val items: MutableList<ContentModel>) :
     RecyclerView.Adapter<ContentAdapter.ViewHolder>() {
     // View Holder를 생성하고 View를 붙여주는 메서드
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_content_list, parent, false)
         return ViewHolder(v)
     }
 
     // 생성된 View Holder에 데이터를 바인딩 해주는 메서드
-    override fun onBindViewHolder(holder: ContentAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(items[position])
     }
 
@@ -38,8 +38,9 @@ class ContentAdapter(val items: MutableList<ContentModel>) :
                     // 클릭된 아이템에 대한 처리를 수행합니다.
                     val message = "Clicked: ${clickedItem.title}"
                     Toast.makeText(itemView.context, message, Toast.LENGTH_SHORT).show()
-//                    val intent: Intent = Intent(itemView.context, ContentScreenActivity::class.java)
-//                    itemView.context.startActivity(intent)
+                    val intent: Intent = Intent(itemView.context, UserBoardActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    itemView.context.startActivity(intent)
                 }
             }
         }

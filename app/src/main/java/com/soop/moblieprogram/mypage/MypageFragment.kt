@@ -1,4 +1,4 @@
-package com.soop.moblieprogram
+package com.soop.moblieprogram.mypage
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.soop.moblieprogram.R
 
 class MypageFragment : Fragment() {
     // Initialize variables

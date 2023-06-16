@@ -1,10 +1,8 @@
-package com.soop.moblieprogram
+package com.soop.moblieprogram.mypage
 
-import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -13,15 +11,15 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import java.util.*
+import com.soop.moblieprogram.R
+import de.hdodenhof.circleimageview.CircleImageView
 
 class UploadActivity : AppCompatActivity() {
     // creating variable for buttons, image view and Uri for file.
-    lateinit var chooseImageBtn: Button
+    lateinit var chooseImageBtn: CircleImageView
     lateinit var uploadImageBtn: Button
     lateinit var imageView: ImageView
     var fileUri: Uri? = null;
