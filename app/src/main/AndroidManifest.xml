@@ -12,9 +12,11 @@
         android:theme="@style/Theme.MoblieProgram"
         tools:targetApi="31">
         <activity
+            android:name=".board.UserBoardActivity"
+            android:exported="true" />
+        <activity
             android:name=".ChatRoomActivity"
-            android:exported="false" />
-        <!-- <activity -->
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".ChatRoomListActivity" -->
         <!-- android:exported="false" /> -->
         <!-- <activity -->
@@ -24,13 +26,13 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ContentWriteActivity"
+            android:name=".board.ContentWriteActivity"
             android:exported="true" />
         <activity
-            android:name=".ContentListActivity"
+            android:name=".board.ContentListActivity"
             android:exported="true" />
         <activity
-            android:name=".MypageWriteListActivity"
+            android:name=".mypage.MypageWriteListActivity"
             android:exported="true" />
         <activity
             android:name=".NaviActivity"
@@ -53,13 +55,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".mypage.ProfileActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".UploadActivity"
+            android:name=".mypage.UploadActivity"
             android:exported="true" />
         <activity
             android:name=".BoardActivity"
